@@ -5,14 +5,16 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+//import MenuIcon from '@material-ui/icons/Menu';
 //Material para el menu
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 //para mis rutas 
-import { NavLink } from 'react-router-dom'
-
-//estilos estaticos de material ui
+//import { NavLink } from 'react-router-dom'
+//llamado de componentes
+import ButtonCartWidget from '../components/cartWidget/CartWidget';
+import ItemListContainer from './itemListContainer/ItemListContainer';
+ //estilos estaticos de material ui
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -47,10 +49,7 @@ export default function ButtonAppBar() {
                         <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu"  >
                             LOGO
                         </IconButton>
-
-                        
                     </div>
-
                     <Typography variant="h6" className={classes.title}>DuComercio</Typography>
                     <div>
                         <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
@@ -70,9 +69,12 @@ export default function ButtonAppBar() {
                             <MenuItem onClick={handleClose}>Juguetes</MenuItem>
                         </Menu>
                     </div>
+                    <ButtonCartWidget></ButtonCartWidget>
+                    <div> <ItemListContainer></ItemListContainer> </div>
                     <Button color="inherit">Login</Button>
                 </Toolbar>
             </AppBar>
+            
         </div>
     );
 }
